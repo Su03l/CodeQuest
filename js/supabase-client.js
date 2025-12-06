@@ -410,7 +410,15 @@ async function updateUIForLoggedInUser(user) {
 
     // Get user profile to display username
     const profile = await getUserProfile(user.id);
-    const displayName = (profile.success && profile.data && profile.data.username) ? profile.data.username : user.email.split('@')[0];
+
+    // Priority: 1. Profile DB (if edited) 2. Metadata (from signup) 3. Email fallback
+    let displayName = user.email.split('@')[0];
+
+    if (profile.success && profile.data && profile.data.username) {
+        displayName = profile.data.username;
+    } else if (user.user_metadata && user.user_metadata.username) {
+        displayName = user.user_metadata.username;
+    }
 
     if (usernameDisplay) {
         usernameDisplay.textContent = displayName;
