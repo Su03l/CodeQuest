@@ -75,7 +75,8 @@ async function signOut() {
         if (error) throw error;
 
         // Redirect to home page
-        window.location.href = 'Index.html';
+        const isHtmlDir = window.location.pathname.includes('/html/');
+        window.location.href = isHtmlDir ? '../Index.html' : 'Index.html';
         return { success: true };
     } catch (error) {
         console.error('Sign out error:', error);

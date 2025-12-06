@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     signupForm.reset();
                     // Optionally redirect to login or home
                     setTimeout(() => {
-                        window.location.href = 'Index.html';
+                        const isHtmlDir = window.location.pathname.includes('/html/');
+                        window.location.href = isHtmlDir ? '../Index.html' : 'Index.html';
                     }, 1500);
                 } else {
                     showAlert('Error: ' + result.error, 'error');
@@ -66,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     showAlert('Login successful!', 'success');
                     loginForm.reset();
                     setTimeout(() => {
-                        window.location.href = 'Index.html';
+                        const isHtmlDir = window.location.pathname.includes('/html/');
+                        window.location.href = isHtmlDir ? '../Index.html' : 'Index.html';
                     }, 1000);
                 } else {
                     showAlert('Error: ' + result.error, 'error');
@@ -95,7 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Force reload/redirect to ensure UI updates
                 setTimeout(() => {
-                    window.location.href = 'Index.html';
+                    const isHtmlDir = window.location.pathname.includes('/html/');
+                    window.location.href = isHtmlDir ? '../Index.html' : 'Index.html';
                 }, 1000);
             });
         }
