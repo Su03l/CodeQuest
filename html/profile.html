@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile - CodeQuest</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="profile.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header">
+      <section class="flex">
+        <a href="Index.html" class="logo"
+          ><i class="fa fa-trophy"></i>CodeQuest</a
+        >
+
+        <nav class="navbar">
+          <a href="Index.html#home">Home</a>
+          <a href="Index.html#about">About</a>
+          <a href="Index.html#faq">Faq</a>
+          <a href="Index.html#contact">Contact</a>
+        </nav>
+
+        <div id="user-status">
+          <a href="Slide login form.html" class="btn" id="Slide login form-link"
+            >Sign Up</a
+          >
+          <div
+            class="user-profile-dropdown"
+            id="user-info"
+            style="display: none"
+          >
+            <div class="profile-trigger" id="profile-trigger">
+              <div class="user-avatar">
+                <i class="fas fa-user-circle"></i>
+              </div>
+              <span id="username-display"></span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu">
+              <a href="profile.html" class="dropdown-item">
+                <i class="fas fa-user"></i> Profile
+              </a>
+              <a href="#" class="dropdown-item" id="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <div id="menu-btn" class="fa fa-bars-staggered"></div>
+
+    <!-- Profile Content -->
+    <section class="profile-section">
+      <div class="profile-layout">
+        <!-- Left Column: Main Content -->
+        <main class="profile-main">
+          <!-- Overview Section -->
+          <div id="section-overview" class="profile-content-section active">
+            <!-- User Info Card -->
+            <div class="profile-card">
+              <div class="profile-header">
+                <div class="profile-avatar-large">
+                  <i class="fas fa-user-circle"></i>
+                </div>
+                <h2 id="profile-username">Loading...</h2>
+                <p id="profile-email">email@example.com</p>
+                <p class="member-since">
+                  Member since <span id="member-since">...</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Progress Dashboard -->
+            <div class="progress-card">
+              <h3><i class="fas fa-chart-line"></i> My Progress</h3>
+
+              <div class="language-progress">
+                <div class="progress-item">
+                  <div class="progress-header">
+                    <div class="progress-title">
+                      <i class="fab fa-python"></i>
+                      <span>Python</span>
+                    </div>
+                    <span class="progress-count" id="python-count">0/10</span>
+                  </div>
+                  <div class="progress-bar-container">
+                    <div
+                      class="progress-bar python"
+                      id="python-progress"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="progress-item">
+                  <div class="progress-header">
+                    <div class="progress-title">
+                      <i class="fab fa-html5"></i>
+                      <span>HTML</span>
+                    </div>
+                    <span class="progress-count" id="html-count">0/10</span>
+                  </div>
+                  <div class="progress-bar-container">
+                    <div
+                      class="progress-bar html"
+                      id="html-progress"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="progress-item">
+                  <div class="progress-header">
+                    <div class="progress-title">
+                      <i class="fab fa-css3-alt"></i>
+                      <span>CSS</span>
+                    </div>
+                    <span class="progress-count" id="css-count">0/10</span>
+                  </div>
+                  <div class="progress-bar-container">
+                    <div
+                      class="progress-bar css"
+                      id="css-progress"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div class="progress-item">
+                  <div class="progress-header">
+                    <div class="progress-title">
+                      <i class="fab fa-js"></i>
+                      <span>JavaScript</span>
+                    </div>
+                    <span class="progress-count" id="javascript-count"
+                      >0/10</span
+                    >
+                  </div>
+                  <div class="progress-bar-container">
+                    <div
+                      class="progress-bar javascript"
+                      id="javascript-progress"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="total-progress">
+                <h4>Total Challenges Completed</h4>
+                <div class="total-count" id="total-count">0/40</div>
+              </div>
+            </div>
+
+            <!-- Certificates Section -->
+            <div class="certificates-card">
+              <h3><i class="fas fa-certificate"></i> My Certificates</h3>
+              <div class="certificates-grid" id="certificates-grid">
+                <p class="no-certificates">
+                  Complete all challenges in a language to earn a certificate!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Edit Profile Section -->
+          <div id="section-edit-profile" class="profile-content-section hidden">
+            <div class="profile-card">
+              <h3>Edit Profile</h3>
+              <form id="edit-profile-form" class="profile-form">
+                <div class="form-group avatar-edit-group">
+                  <div class="avatar-preview">
+                    <i class="fas fa-user-circle"></i>
+                  </div>
+                  <div class="avatar-controls">
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-sm"
+                      id="change-avatar-btn"
+                    >
+                      Change
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger btn-sm"
+                      id="delete-avatar-btn"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                  <input
+                    type="file"
+                    id="avatar-upload"
+                    accept="image/*"
+                    style="display: none"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="edit-username">Name</label>
+                  <input
+                    type="text"
+                    id="edit-username"
+                    name="username"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="edit-email">Email</label>
+                  <input type="email" id="edit-email" name="email" required />
+                </div>
+
+                <button type="submit" class="btn">Save Changes</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Change Password Section -->
+          <div
+            id="section-change-password"
+            class="profile-content-section hidden"
+          >
+            <div class="profile-card">
+              <h3>Change Password</h3>
+              <form id="change-password-form" class="profile-form">
+                <div class="form-group">
+                  <label for="edit-password-old">Old Password</label>
+                  <input
+                    type="password"
+                    id="edit-password-old"
+                    name="old_password"
+                    placeholder="Enter current password"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="edit-password-new">New Password</label>
+                  <input
+                    type="password"
+                    id="edit-password-new"
+                    name="new_password"
+                    placeholder="Enter new password"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="edit-password-confirm"
+                    >Confirm New Password</label
+                  >
+                  <input
+                    type="password"
+                    id="edit-password-confirm"
+                    name="confirm_password"
+                    placeholder="Confirm new password"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn">Update Password</button>
+              </form>
+            </div>
+          </div>
+        </main>
+
+        <!-- Right Column: Navigation Sidebar -->
+        <aside class="profile-nav-sidebar">
+          <div class="nav-card">
+            <h3>Menu</h3>
+            <ul class="profile-nav-list">
+              <li class="nav-item active" data-target="section-overview">
+                <i class="fas fa-user"></i> Overview
+              </li>
+              <li class="nav-item" data-target="section-edit-profile">
+                <i class="fas fa-edit"></i> Edit Profile
+              </li>
+              <li class="nav-item" data-target="section-change-password">
+                <i class="fas fa-lock"></i> Change Password
+              </li>
+            </ul>
+            <hr style="margin: 1rem 0; border: 0; border-top: 1px solid #eee" />
+            <a
+              href="Index.html"
+              class="btn btn-secondary"
+              style="width: 100%; text-align: center; display: block"
+            >
+              <i class="fas fa-home"></i> Back to Home
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="Script1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-client.js"></script>
+    <script src="ui.js"></script>
+    <script src="profile.js"></script>
+  </body>
+</html>
