@@ -149,9 +149,15 @@ async function getUserProfile(userId) {
             .from('user_profiles')
             .select('*')
             .eq('id', userId)
-            .single();
+            .maybeSingle(); // Use maybeSingle to return null instead of error if not found
 
         if (error) throw error;
+
+        if (!data) {
+            // Profile not found, this is expected for new users sometimes
+            return { success: false, error: 'Profile not found' };
+        }
+
         return { success: true, data: data };
     } catch (error) {
         console.error('Get profile error:', error);
