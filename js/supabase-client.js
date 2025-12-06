@@ -24,6 +24,7 @@ async function signUp(email, password, username) {
             email: email,
             password: password,
             options: {
+                emailRedirectTo: 'https://codequest-1212.netlify.app/',
                 data: {
                     username: username
                 }

@@ -26,13 +26,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 const result = await signUp(email, password, username);
 
                 if (result.success) {
-                    showAlert('Account created successfully! Please check your email.', 'success');
-                    signupForm.reset();
-                    // Optionally redirect to login or home
-                    setTimeout(() => {
-                        const isHtmlDir = window.location.pathname.includes('/html/');
-                        window.location.href = isHtmlDir ? '../Index.html' : 'Index.html';
-                    }, 1500);
+                    // Check if we have an active session (user is logged in immediately)
+                    if (result.data.session) {
+                        showAlert('Account created and logged in successfully!', 'success');
+                        signupForm.reset();
+                        // Redirect to home/profile
+                        setTimeout(() => {
+                            const isHtmlDir = window.location.pathname.includes('/html/');
+                            window.location.href = isHtmlDir ? '../Index.html' : 'Index.html';
+                        }, 1500);
+                    } else {
+                        // User needs to confirm email
+                        showAlert('Account created successfully! Please check your email.', 'success');
+                        signupForm.reset();
+                        // Optionally redirect to login or home
+                        setTimeout(() => {
+                            const isHtmlDir = window.location.pathname.includes('/html/');
+                            window.location.href = isHtmlDir ? '../Index.html' : 'Index.html';
+                        }, 1500);
+                    }
                 } else {
                     showAlert('Error: ' + result.error, 'error');
                 }
