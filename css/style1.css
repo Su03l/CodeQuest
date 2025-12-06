@@ -186,7 +186,7 @@ body {
 
 .home {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url(bg.png) no-repeat;
+    url(../public/bg.png) no-repeat;
   background-position: center;
   background-size: cover;
   background-blend-mode: multiply;
@@ -709,3 +709,4 @@ body {
     opacity: 1;
   }
 }
+
