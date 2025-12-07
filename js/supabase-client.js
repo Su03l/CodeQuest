@@ -2,8 +2,8 @@
 // This file handles all Supabase interactions for CodeQuest
 
 // Initialize Supabase client
-const SUPABASE_URL = 'https://unzionpazoxeotfxfwwf.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVuemlvbnBhem94ZW90Znhmd3dmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNDY5ODAsImV4cCI6MjA4MDYyMjk4MH0.3Hkd9JNWW20Kv44FLRPZkKl6HShy3BSFY8RJYhdE53Q';
+const SUPABASE_URL = 'https://llowekvoviomnbvdkqki.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxsb3dla3ZvdmlvbW5idmRrcWtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjUwNjgyNDYsImV4cCI6MjA4MDY0NDI0Nn0.f-a6T5EOLtx2ClkwXjUzmjUgfn53YlLEv2-r45b3B00';
 
 const _supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
